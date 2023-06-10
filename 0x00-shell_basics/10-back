@@ -1,2 +1,15 @@
 #!/bin/bash
-cd ..
+
+# Retrieve the previous directory from the OLDPWD environment variable
+previous_dir=$OLDPWD
+
+# Change to the previous directory
+cd "$previous_dir"
+
+# Check if the directory change was successful
+if [ $? -eq 0 ]; then
+    echo "Changed directory to previous: $previous_dir"
+else
+    echo "Failed to change directory."
+fi
+
