@@ -1,15 +1,2 @@
 #!/bin/bash
-
-# Create the /tmp/u directory if it doesn't exist
-mkdir -p /tmp/u
-
-# Move files starting with an uppercase letter to /tmp/u
-mv [A-Z]* /tmp/u/
-
-# Check if any files were moved
-if [ $? -eq 0 ]; then
-    echo "Files moved successfully."
-else
-    echo "No files matching the criteria found or failed to move files."
-fi
-
+mv [[:upper:]]* /tmp/u
